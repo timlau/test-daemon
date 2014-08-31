@@ -19,9 +19,8 @@
 #
 # Test system bus dBus service
 #
-print("before import gtk")
-from gi.repository import Gtk
-print("after import gtk")
+
+from gi.repository import GObject
 
 import argparse
 import dbus
@@ -32,6 +31,7 @@ import logging
 DAEMON_ORG = 'dk.yumex.test'
 DAEMON_INTERFACE = DAEMON_ORG
 logger = logging.getLogger(DAEMON_ORG)
+mainloop = GObject.MainLoop()
 
 
 
@@ -66,7 +66,8 @@ class TestDaemon(dbus.service.Object):
         :param sender:
         """
         print("Exit called")
-        Gtk.main_quit()
+        #Gtk.main_quit()
+        mainloop.quit()
         return True
 
 def main():
@@ -78,7 +79,7 @@ def main():
     # setup the DBus mainloop
     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
     yd = TestDaemon()
-    Gtk.main()
+    mainloop.run()
 
 
 if __name__ == '__main__':

@@ -53,7 +53,7 @@ class TestDaemon(dbus.service.Object):
         """
         Get the daemon version
         """
-	print("GetVersion called")
+        print("GetVersion called")
         return 100
 
     @dbus.service.method(DAEMON_INTERFACE,
@@ -65,7 +65,7 @@ class TestDaemon(dbus.service.Object):
         Exit the daemon
         :param sender:
         """
-	print("Exit called")
+        print("Exit called")
         Gtk.main_quit()
         return True
 

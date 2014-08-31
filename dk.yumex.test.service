@@ -1,4 +1,4 @@
 [D-BUS Service]
 Name=dk.yumex.test
-Exec=/usr/share/test-deamon/test-dnfdaemon
+Exec=/usr/share/test-daemon/test-daemon
 User=root

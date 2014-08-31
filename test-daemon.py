@@ -19,7 +19,9 @@
 #
 # Test system bus dBus service
 #
+print("before import gtk")
 from gi.repository import Gtk
+print("after import gtk")
 
 import argparse
 import dbus
@@ -27,7 +29,7 @@ import dbus.service
 import dbus.mainloop.glib
 import logging
 
-DAEMON_ORG = 'dk.yumex.Test'
+DAEMON_ORG = 'dk.yumex.test'
 DAEMON_INTERFACE = DAEMON_ORG
 logger = logging.getLogger(DAEMON_ORG)
 
@@ -51,6 +53,7 @@ class TestDaemon(dbus.service.Object):
         """
         Get the daemon version
         """
+	print("GetVersion called")
         return 100
 
     @dbus.service.method(DAEMON_INTERFACE,
@@ -62,6 +65,7 @@ class TestDaemon(dbus.service.Object):
         Exit the daemon
         :param sender:
         """
+	print("Exit called")
         Gtk.main_quit()
         return True
 

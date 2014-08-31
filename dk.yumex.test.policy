@@ -5,7 +5,7 @@
 <policyconfig>
   <vendor>Yumex</vendor>
   <vendor_url>http://yumex.dk</vendor_url>
-  <action id="dk.yumex.Test">
+  <action id="dk.yumex.test">
     <description>Test Daemon</description>
     <message>Application requesting access to run as root</message>
     <defaults>

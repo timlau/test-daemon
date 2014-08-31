@@ -24,13 +24,13 @@ uninstall:
 
 
 run-exit:
-	@sudo /usr/bin/dbus-send --system --print-reply --dest="dk.yumex.Test" / dk.yumex.Test.Exit
+	@sudo /usr/bin/dbus-send --system --print-reply --dest="dk.yumex.test" / dk.yumex.test.Exit
 	
 run-version:
-	@sudo /usr/bin/dbus-send --system --print-reply --dest="dk.yumex.Test" / dk.yumex.Test.GetVersion
+	@sudo /usr/bin/dbus-send --system --print-reply --dest="dk.yumex.test" / dk.yumex.test.GetVersion
 	
 start-daemon-udv:
-	python2 $(PKGNAME).py
+	python3 $(PKGNAME).py
 
 start-daemon:
 	$(DESTDIR)/$(PKGDIR)/$(PKGNAME)
